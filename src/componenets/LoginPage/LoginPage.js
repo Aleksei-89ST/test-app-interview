@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
-// import { withRouter } from "react-router-dom";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { LOGIN, PASSWORD } from "../../constants/constans";
 import { login } from "../../redux/actions/actions";
 import "./styles.css";
@@ -21,18 +21,17 @@ const LoginPage = () => {
     <form className="form">
       <input className="form__input" onChange={handlerLogin} />
       <input className="form__input" onChange={handlerPassword} />
-      <button
-        className="form__link"
-        to="/"
-        disabled={
+      <Link
+        className={`form__link ${
           state.login === "developer12" && state.password === "123456"
-            ? false
-            : true
-        }
+            ? ''
+            : 'form__link--disabled'
+        }`}
+        to="/profile"
       >
         Войти
-      </button>
+      </Link>
     </form>
   );
 };
-export default LoginPage;
+export default withRouter(LoginPage);

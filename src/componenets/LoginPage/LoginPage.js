@@ -23,7 +23,7 @@ const LoginPage = () => {
       <input className="form__input" onChange={handlerPassword} />
       <Link
         className={`form__link ${
-          state.login === "developer12" && state.password === "123456"
+          state.login === "Starovoitov-Aleksei" && state.password === "123456"
             ? ''
             : 'form__link--disabled'
         }`}
